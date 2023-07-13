@@ -9,6 +9,9 @@ pipeline {
         }
     }
     post {
+      always {
+        echo "Let's see how it went.."
+      }
       sucess {
         echo "It was a success!"
       }
