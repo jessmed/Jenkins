@@ -1,27 +1,23 @@
 pipeline {
-  agent { label 'principal' }
-  environment {
-    appName = "variable" 
-  }
-  stages {
+    agent any
 
- stage("paso 1"){
-     
-      steps {
-          script {			
-           sh "echo 'hola mundo'"
+    stages {
+        stage('Paso 1') {
+            steps {
+                echo 'Hello World'
+            }
         }
+    }
+    post {
+      always {
+        echo "Let's see how it went.."
+      }
+      success {
+        echo "It was a success!"
+      }
+      failure{
+        echo "It was a failure :("
       }
     }
-  }
-  post {
-      success {
-            sh "echo 'fase success'"
-        }
 
-      failure {
-            sh "echo 'fase failure'"
-      }
-      
-  }
-}  
+}
