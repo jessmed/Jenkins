@@ -12,7 +12,7 @@ pipeline {
       always {
         echo "Let's see how it went.."
       }
-      sucess {
+      success {
         echo "It was a success!"
       }
       failure{
