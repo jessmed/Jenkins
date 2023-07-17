@@ -4,13 +4,15 @@ pipeline {
     stages {
         stage('Docker build') {
             steps {
-                sh "docker build -f pipelineDockerHub/Dockerfile -t medyesus/dokerhubtest:1.0.0-${BUILD-ID} pipelineDockerHub"
+                script {
+                    sh "docker build -f pipelineDockerHub/Dockerfile -t medyesus/dokerhubtest:1.0.0-${BUILD_ID} pipelineDockerHub"
+                }
             }
         }
         stage('Docker push') {
             steps {
                 script {
-                    sh "docker push medyesus/dokerhubtest:1.0.0-${BUILD-ID}"
+                    sh "docker push medyesus/dokerhubtest:1.0.0-${BUILD_ID}"
                 }
             }
         }   
