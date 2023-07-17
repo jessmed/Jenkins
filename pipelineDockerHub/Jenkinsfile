@@ -12,8 +12,7 @@ pipeline {
         stage('Docker push') {
             steps {
                 script {
-                    withDockerRegistry([credentialsId: 'medyesus/dokerhubtest']) {
-                        sh "docker push medyesus/dokerhubtest:1.0.0-${BUILD_ID}"
+                    sh "docker push medyesus/dokerhubtest:1.0.0-${BUILD_ID}"
                 }
             }
         }   
