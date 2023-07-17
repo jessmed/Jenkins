@@ -15,6 +15,7 @@ pipeline {
                   withCredentials([usernamePassword(credentialsId: 'dockerhub_credentials', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
                     sh "docker login -u ${env.DOCKERHUB_USERNAME} -p ${env.DOCKERHUB_USERNAME}"
                     sh "docker push medyesus/dokerhubtest:1.0.0-${BUILD_ID}"
+                  }
                 }
             }
         }   
