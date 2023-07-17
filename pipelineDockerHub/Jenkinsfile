@@ -15,6 +15,22 @@ pipeline {
                     sh "docker push medyesus/dokerhubtest:1.0.0-${BUILD-ID}"
                 }
             }
-        }
+        }   
+        stage('Paso final') {
+            steps {
+                echo 'Hello World'
+            }
+        }     
+    }
+    post {
+      always {
+        echo "Let's see how it went.."
+      }
+      success {
+        echo "It was a success!"
+      }
+      failure{
+        echo "It was a failure :("
+      }
     }
 }
