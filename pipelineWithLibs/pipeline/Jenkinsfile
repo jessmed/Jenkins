@@ -1,0 +1,6 @@
+@Library('jenkinsLibs') _
+dockerPipeline(
+    DockerfilePath: "pipelineDockerHub/Dockerfile",
+    DockerImage: "medyesus/dokerhubtest:1.0.0-${BUILD_ID}",
+    DockerContext: "pipelineDockerHub"
+)
