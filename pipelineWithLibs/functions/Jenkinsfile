@@ -1,0 +1,23 @@
+@Library('jenkinsLibs') _
+pipeline {
+    agent any
+
+    stages {
+        stage('docker build') {
+            steps {
+                script {
+                    dockerLib.build(DockerfilePath: "pipelineDockerHub/Dockerfile",
+                                    DockerImage: "medyesus/dokerhubtest:1.0.0-${BUILD_ID}",
+                                    DockerContext: "pipelineDockerHub")
+                }
+            }
+        }
+        stage('docker push') {
+            steps {
+                script {
+                    dockerLib.push(DockerImage: "medyesus/dokerhubtest:1.0.0-${BUILD_ID}")
+                }
+            }
+        }
+    }
+}
