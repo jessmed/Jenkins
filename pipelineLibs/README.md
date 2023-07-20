@@ -1,6 +1,7 @@
 # Directory structure
 ### The directory structure of a Shared Library repository is as follows:
 
+```
 (root)
 +- src                     # Groovy source files
 |   +- org
@@ -13,5 +14,6 @@
 |   +- org
 |       +- foo
 |           +- bar.json    # static helper data for org.foo.Bar
+```
 
 https://www.jenkins.io/doc/book/pipeline/shared-libraries/
