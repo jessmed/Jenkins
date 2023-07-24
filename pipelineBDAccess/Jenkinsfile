@@ -3,8 +3,7 @@ pipeline {
     parameters {
         string defaultValue: '', description: 'Nombre del usuario a crear', name: 'USUARIO', trim: true
         string defaultValue: '', description: 'contraseña nueva del usuario a crear', name: 'PASSWORD', trim: true
-        choice choices: ['Lectura','Admin','Desarrollador'], description: '', name: 'TIPOUSUARIO'
-        multiSelectDelimiter: ',', name: 'DATABASE', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', 
+        choice choices: ['Lectura','Admin','Desarrollador'], description: '', name: 'TIPOUSUARIO', name: 'DATABASE', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_CHECKBOX', 
             value: 'database,otroejemplo', visibleItemCount: 10
     }
     environment {
